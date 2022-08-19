@@ -3,9 +3,11 @@ package com.khodyka.edu.accountservice.domain
 import java.math.BigDecimal
 import java.util.*
 import javax.persistence.Column
+import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
 import javax.persistence.Id
+import javax.persistence.Table
 
 enum class AccountStatus {
     ACTIVE,
@@ -17,7 +19,9 @@ enum class BalanceOperation {
     DECREASE
 }
 
-class Account(
+@Entity
+//@Table(schema = "account_service", name = "account")
+class Account (
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     var id: UUID? = null,

@@ -34,8 +34,8 @@ class AccountService(
 
     fun changeAccountStatus(request: ChangeAccountStatusRequest) {
         when (request.newStatus) {
-            AccountStatus.ACTIVE -> unblockAccount(request.id)
-            AccountStatus.BLOCKED -> blockAccount(request.id)
+            AccountStatus.ACTIVE -> unblockAccount(request.id!!)
+            AccountStatus.BLOCKED -> blockAccount(request.id!!)
         }
     }
 
